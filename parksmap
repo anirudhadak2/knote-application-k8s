@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: "2023-06-20T12:05:43Z"
+  generation: 1
+  labels:
+    app: mydep1
+  name: mydep1
+  namespace: default
+spec:
+  selector:
+    matchLabels:
+      app: mydep1
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: mydep1
+    spec:
+      containers:
+      - image: quay.io/openshiftroadshow/parksmap
+        imagePullPolicy: Always
+        name: parksmap
+        resources: {}
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+status: {}
+
